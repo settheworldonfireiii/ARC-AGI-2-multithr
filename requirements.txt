@@ -1,0 +1,21 @@
+# Runtime deps for orch_2.py (API orchestrator) and orch_2_cloud.py.
+# Install into a Python 3.12 venv:  pip install -r requirements.txt
+
+# --- LLM provider SDKs ---
+anthropic>=0.75
+openai>=2.8            # used for OpenAI, Fireworks (compat endpoint) and cloud
+# fireworks-ai>=0.15   # optional: only if you call native Fireworks models
+
+# --- core ---
+numpy>=1.26
+pydantic>=2.12
+json-repair>=0.30
+
+# --- rendering (render.py turns grids into PNGs for the vision prompt) ---
+pillow>=10
+attrs>=23
+devtools>=0.12
+
+# --- cloud accelerator (orch_2_cloud.py, LocalVLLMBackend only) ---
+# vllm                 # install on the GPU box to serve on-disk weights;
+#                      # needs CUDA. Not required for EndpointBackend.
